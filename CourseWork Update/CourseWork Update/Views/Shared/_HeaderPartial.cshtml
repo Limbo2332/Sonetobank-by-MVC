@@ -1,0 +1,29 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<header class="header">
+    <div class="container">
+        <div class="row">
+            <div class="offset-1 offset-lg-0 offset-md-0 col-lg-3 col-3 col-md-4 header-icon">
+                <img src="~/images/main icon.png" alt="Іконка" />
+                <a asp-controller="Home" asp-action="MainPage" class="header-icon-text"><span>СонетоБанк</span> </a>
+            </div>
+            <div class="offset-4 offset-lg-6 offset-md-4 col-md-4 col-3 col-lg-3 header-right-navbar">
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Кабінет</a>
+                    <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("MainPage", "Home", new { area = "" })">
+                        <button type="submit">Вийти з акаунту</button>
+                    </form>
+                }
+                else
+                {
+                    <a asp-area="Identity" asp-page="/Account/Login">Вхід</a>
+                    <a asp-area="Identity" asp-page="/Account/Register">Реєстрація</a>
+                }
+            </div>
+        </div>
+    </div>
+</header>
+

@@ -1,0 +1,272 @@
+﻿$navbar-bg: #00ff47;
+$white: #fff;
+$login-button-bg: rgba(255, 107, 0, 0.88);
+$content-header: #545454;
+$button: #96bb00;
+
+.second-navbar {
+    margin-top: 24px;
+    background-color: $navbar-bg;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 24px;
+
+    & ul {
+        padding-left: 0;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0;
+
+        & li {
+            border-bottom: 1px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 18px 0;
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            & a {
+                color: $white;
+                text-decoration: none;
+            }
+
+            &:hover,
+            &.active {
+                background: linear-gradient( 0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15) ), $navbar-bg;
+                box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+            }
+        }
+    }
+}
+
+.group-input {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 14px;
+
+    & .input {
+        display: block;
+        padding: 12px 14px;
+        width: 80%;
+        background-color: $white;
+        border: none;
+        border-radius: 10px;
+
+        &::placeholder {
+            color: rsgba(0, 0, 0, 0.5);
+            padding-left: 5px;
+            font-size: 14px;
+        }
+
+        &:focus-visible {
+            outline: 1px solid greenyellow;
+        }
+    }
+
+    & label {
+        margin-left: 8px;
+        margin-bottom: 4px;
+    }
+}
+
+input[type="submit"] {
+    display: block;
+    margin: 15px 0;
+    width: 80%;
+    font-weight: 700;
+    font-size: 16px;
+    color: $white;
+    background: $login-button-bg;
+    border-radius: 104px;
+    padding: 10px 0px;
+
+    &:hover,
+    &:active {
+        background: linear-gradient( 0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), $login-button-bg;
+        color: white;
+    }
+}
+
+
+.contain-credit {
+
+    &-main {
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4), inset 0px 4px 4px rgba(0, 0, 0, 0.4);
+        border-radius: 20px;
+
+        &-content {
+            margin-bottom: 48px;
+        }
+    }
+
+    & .my-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 0.5px solid $content-header;
+        font-weight: 600;
+        color: #0c0c0c;
+
+        &-name {
+            font-size: 18px;
+            padding: 32px 8px;
+        }
+
+        &-value {
+            font-size: 28px;
+            text-align: left;
+            width: 30%;
+            padding: 26px 8px;
+        }
+
+        margin-top: 10px;
+    }
+}
+
+.animate {
+    text-align: center;
+}
+.get-credit-animate {
+    color: $white;
+    background-color: $button;
+    border-radius: 100px;
+    font-weight: 800;
+    font-size: 20px;
+    text-transform: uppercase;
+    padding: 16px 32px;
+    margin-top: 40px;
+    margin-bottom: 64px;
+
+    &:hover {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), $button;
+        color: $white;
+    }
+}
+.table {
+    & .my-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 0.5px solid $content-header;
+        font-weight: 600;
+        color: #0c0c0c;
+
+        &-name {
+            font-size: 16px;
+            padding: 32px 8px;
+        }
+
+        &-value {
+            font-size: 28px;
+            text-align: left;
+            width: 30%;
+            padding: 26px 8px;
+        }
+
+        margin-top: 10px;
+    }
+}
+
+
+@media (min-width: 0) {
+    .contain-credit-main-content {
+        & .my-row {
+            &-name {
+                width: 40%;
+                font-size: 14px;
+            }
+
+            &-value {
+                width: 50%;
+                font-size: 18px;
+            }
+        }
+    }
+    .table {
+        & .my-row {
+            &-name {
+                width: 40%;
+                font-size: 14px;
+            }
+
+            &-value {
+                width: 50%;
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .table {
+        & .my-row {
+            &-name {
+                width: 50%;
+                font-size: 18px;
+            }
+
+            &-value {
+                width: 33%;
+                font-size: 24px;
+            }
+        }
+    }
+    .contain-credit-main-content {
+        & .my-row {
+            &-name {
+                width: 50%;
+                font-size: 18px;
+            }
+
+            &-value {
+                width: 33%;
+                font-size: 24px;
+            }
+        }
+    }
+
+    input[type="submit"], .group-input .input {
+        width: 100%;
+    }
+}
+
+@media (min-width: 992px) {
+    .contain-credit-main-content {
+        & .my-row {
+            &-name {
+                width: 50%;
+                font-size: 18px;
+            }
+
+            &-value {
+                width: 33%;
+                font-size: 24px;
+            }
+        }
+    }
+    .table {
+        & .my-row {
+            &-name {
+                width: 50%;
+                font-size: 18px;
+            }
+
+            &-value {
+                width: 33%;
+                font-size: 24px;
+            }
+        }
+    }
+
+    input[type="submit"], .group-input .input {
+        width: 80%;
+    }
+}
+

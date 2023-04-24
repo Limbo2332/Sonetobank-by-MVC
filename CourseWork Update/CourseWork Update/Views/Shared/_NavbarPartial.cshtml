@@ -1,0 +1,8 @@
+﻿<nav class="main-navbar">
+    <ul>
+        <li class="@Html.IsActive("Credit", "Index")"><a asp-controller="Credit" asp-action="Index">Кредити</a></li>
+        <li class="@Html.IsActive("Deposit", "Index") @ViewData["Active"]"><a asp-controller="Deposit" asp-action="Index">Депозити</a></li>
+        <li class="@Html.IsActive("Home", "Terms")"><a asp-controller="Home" asp-action="Terms">Умови використання</a></li>
+        <li class="@Html.IsActive("Home", "AboutBank")"><a asp-controller="Home" asp-action="AboutBank">Про банк</a></li>
+    </ul>
+</nav>

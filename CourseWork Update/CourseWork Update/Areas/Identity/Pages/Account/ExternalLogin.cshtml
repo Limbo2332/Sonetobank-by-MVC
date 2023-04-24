@@ -1,0 +1,31 @@
+﻿@page
+@using CourseWork_Update.Areas.Identity.Pages.Account
+@model ExternalLoginModel
+@{
+    ViewData["Title"] = "Реєстрація";
+    ViewData["Styles"] = "/css/resetpassword.min.css";
+}
+
+<main class="main">
+    <h1 class="text-center">@ViewData["Title"]</h1>
+    <hr />
+
+    <p id="external-login-description" class="text-info text-center mb-3 fs-4">
+        Ви успішно аутентифікувался через <strong>@Model.ProviderDisplayName</strong>.
+        Будь ласка, введіть ваш Email для цього сайту знизу і натисніть кнопку "Реєстрація" внизу.
+    </p>
+
+    <div class="row">
+        <div class="offset-4 col-4">
+            <form asp-page-handler="Confirmation" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input asp-for="Input.Email" autocomplete="email" aria-required="true" placeholder="E-mail*" class="input" />
+                <input type="submit" value="Реєстрація" class="btn" />
+            </form>
+        </div>
+    </div>
+</main>
+
+
+
+@await Html.PartialAsync("_ValidationScriptsPartial")

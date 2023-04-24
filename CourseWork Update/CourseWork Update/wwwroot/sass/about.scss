@@ -1,0 +1,52 @@
+.about-bank{
+  margin-top: 48px;
+
+  & h2{
+    font-weight: 700;
+    font-size: 28px;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    color: #0C0C0C;
+
+    text-align: center;
+
+    margin: 24px 0 18px;
+  }
+
+  .tel{
+    margin-left: 24px;
+
+    & a{
+      font-weight: 600;
+      font-size: 16px;
+
+      color: #0C0C0C;
+
+      text-decoration: none;
+    }
+  }
+
+  &-part{
+    margin-left: 24px;
+    margin-bottom: 18px;
+
+    & h3{
+      color: #545454;
+
+      font-weight: 700;
+      font-size: 24px;
+
+      margin-bottom: 18px;
+    }
+
+    & p{
+      color: #0C0C0C;
+
+      font-weight: 400;
+      font-size: 16px;
+
+      text-align: justify;
+    }
+  }
+}

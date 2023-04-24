@@ -1,0 +1,24 @@
+﻿@page
+@model ResendEmailConfirmationModel
+@{
+    ViewData["Title"] = "Відправити підтвердження на Email";
+    ViewData["Styles"] = "/css/resetpassword.min.css";
+}
+
+<main class="main">
+    <h1 class="text-center">@ViewData["Title"]</h1>
+    <hr />
+    <div class="row">
+        <div class="offset-4 col-4">
+            <form method="post">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <input asp-for="Input.Email" autocomplete="username" aria-required="true" placeholder="E-mail*" class="input" />
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+                <input type="submit" value="ЗМІНИТИ" class="btn" />
+            </form>
+        </div>
+    </div>
+</main>
+
+
+@await Html.PartialAsync("_ValidationScriptsPartial")

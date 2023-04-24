@@ -1,0 +1,360 @@
+﻿@model CourseWork_Update.Models.CreditModel
+
+@{
+    ViewData["Title"] = "Кредити";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="~/images/main icon.png" type="image/png" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="~/css/components.min.css" type="text/css">
+    <link rel="stylesheet" href=~/css/credits.min.css type="text/css">
+
+    <title>@ViewData["Title"]</title>
+</head>
+<body>
+    @await Html.PartialAsync("_HeaderPartial")
+
+    <div class="container">
+        @await Html.PartialAsync("_NavbarPartial")
+    </div>
+
+    <main class="main">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 main-content">
+                    <h1>
+                        Кредити готівкою <br />
+                        до 1 000 000 грн
+                    </h1>
+                    <p>на всі ваші бажання</p>
+                    <button class="btn get-credit-animate">Отримати кредит</button>
+                </div>
+                <div class="col-lg-4 cache">
+                    <img src="/images/CreditsPage/main-content.png" alt="Готівка" />
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="container">
+        <div class="row">
+            <div class="terms">
+                <h2>Умови</h2>
+                <table class="table table-bordered border-dark">
+                    <tbody>
+                        <tr>
+                            <td width="50%">Максимальна сума кредиту</td>
+                            <td>1 000 000 грн</td>
+                        </tr>
+                        <tr>
+                            <td>Процентна ставка</td>
+                            <td>1.5% на місяць</td>
+                        </tr>
+                        <tr>
+                            <td>Строк договору</td>
+                            <td>від 1 до 10 років</td>
+                        </tr>
+                        <tr>
+                            <td>Реальна річна процентна ставка</td>
+                            <td>37.1%</td>
+                        </tr>
+                        <tr>
+                            <td>Мінімальна сума першого внеску</td>
+                            <td>0 грн</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="form">
+        <div class="container">
+            <div class="row">
+                <div class="for-flex">
+                    <form method="post" id="form">
+                        <div class="col-lg-6 left-side col-12">
+                            <h2>Заповність анкету та отримайте кредит в один клік</h2>
+
+                            <div class="range">
+                                <div class="sum-of-credit">
+                                    <p>Бажана сума кредиту, грн</p>
+                                    <div class="sum" width="190">
+                                        <input type="text"
+                                               class="sum-value"
+                                               id="sum-value"
+                                               value="15000"
+                                               asp-for="CreditSum" />
+                                        <p class="currency">ГРН</p>
+                                    </div>
+                                </div>
+                                <div class="scroll">
+                                    <input type="range"
+                                           name="scroll"
+                                           id="big-scroll"
+                                           min="10000"
+                                           max="1000000"
+                                           value="15000"
+                                           step="1" />
+                                </div>
+                                <div class="min-and-max">
+                                    <p>10 000</p>
+                                    <p>1 000 000</p>
+                                </div>
+                            </div>
+                            <div class="range col-12">
+                                <div class="sum-of-credit">
+                                    <p>Строк кредиту, міс.</p>
+                                    <div class="sum" width="190">
+                                        <input type="text"
+                                               class="sum-value"
+                                               id="term-value"
+                                               value="15"
+                                               asp-for="Term" />
+                                        <p class="currency">МІСЯЦІВ</p>
+                                    </div>
+                                </div>
+                                <div class="scroll">
+                                    <input type="range"
+                                           name="scroll"
+                                           id="big-scroll-2"
+                                           min="6"
+                                           max="120"
+                                           value="15"
+                                           step="1" />
+                                </div>
+                                <div class="min-and-max">
+                                    <p>6</p>
+                                    <p>120</p>
+                                </div>
+                            </div>
+
+                            <div class="everymonthpayment">
+                                <p>Щомісячний платіж, грн</p>
+                                <p class="month-payment">1225.00</p>
+                            </div>
+                        </div>
+                        <div class="offset-lg-1 col-lg-5 right-side">
+                            <div class="first line">
+                                <div class="name">
+                                    <p>Ім'я</p>
+                                    <input type="text" asp-for="Name" placeholder="Введіть ваше ім'я" id="Name" />
+                                    <span asp-validation-for="Name"></span>
+                                </div>
+                                <div class="surname">
+                                    <p>Прізвище</p>
+                                    <input type="text" asp-for="Surname" placeholder="Введіть ваше прізвище" id="Surname" />
+                                    <span asp-validation-for="Surname"></span>
+                                </div>
+                            </div>
+                            <div class="second line">
+                                <div class="phone-number">
+                                    <p>Номер телефону</p>
+                                    <input type="text" asp-for="PhoneNumber" placeholder="+380102030400" id="PhoneNumber" value=@ViewBag.PhoneNumber />
+                                    <span asp-validation-for="PhoneNumber"></span>
+                                </div>
+                                <div class="passport-number">
+                                    <p>Номер паспорту</p>
+                                    <input type="text" asp-for="PassportNumber" placeholder="12345678" id="PassportNumber" />
+                                    <span asp-validation-for="PassportNumber"></span>
+                                </div>
+                            </div>
+                            <p class="birth">Дата народження</p>
+                            <div class="third line">
+                                <div class="day select">
+                                    <select id="day" asp-items="ViewBag.Days" asp-for="BirthDay">
+                                        <option selected="selected">День</option>
+                                    </select>
+                                    <img src="/images/CreditsPage/arrow down.png"
+                                         alt="Розкрити" />
+                                </div>
+                                <div class="month select">
+                                    <select id="month" asp-items="@Html.GetEnumSelectList<BirthMonth>()" asp-for="BirthMonth">
+                                        <option selected="selected">Місяць</option>
+                                    </select>
+                                    <img src="/images/CreditsPage/arrow down.png"
+                                         alt="Розкрити" />
+                                </div>
+                                <div class="year select border-0">
+                                    <select id="year" asp-items="ViewBag.Years" asp-for="BirthYear"> <option selected="selected">Рік</option>
+                                        <option selected="selected">Рік</option>
+                                    </select>
+                                    <img src="/images/CreditsPage/arrow down.png"
+                                         alt="Розкрити" />
+                                </div>
+
+                            </div>
+                            <span asp-validation-for="BirthDate" class="text-center" id="BirthDate"></span>
+                            <div class="forth line">
+                                <p>Тип зайнятості</p>
+                                <div class="employee">
+                                    <select id="employee" asp-items="Html.GetEnumSelectList<EmploymentType>()" asp-for="EmploymentType">
+                                    </select>
+                                    <img src="/images/CreditsPage/arrow down.png"
+                                         alt="Розкрити" />
+                                </div>
+                            </div>
+                            <input type="submit"
+                                   class="btn get-credit"
+                                   value="ОТРИМАТИ КРЕДИТ" />
+
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="container">
+        <div class="row contain-credit">
+            <h2 class="text-center">З чого складається ваш кредит</h2>
+            <div class="contain-credit-main">
+                <div class="contain-credit-scrolls">
+                    <div class="range">
+                        <div class="sum-of-credit">
+                            <p>Сума кредиту, грн</p>
+                            <div class="sum">
+                                <input type="text"
+                                       name="sum-value"
+                                       class="sum-value"
+                                       id="sum-value-2"
+                                       value="15000" />
+                                <p class="currency">ГРН</p>
+                            </div>
+                        </div>
+                        <div class="scroll">
+                            <input type="range"
+                                   name="scroll"
+                                   id="small-scroll"
+                                   min="10000"
+                                   max="1000000"
+                                   value="15000"
+                                   step="1" />
+                        </div>
+                        <div class="min-and-max">
+                            <p>10 000</p>
+                            <p>1 000 000</p>
+                        </div>
+                    </div>
+                    <div class="range">
+                        <div class="sum-of-credit">
+                            <p>Строк кредиту, міс.</p>
+                            <div class="sum" width="190">
+                                <input type="text"
+                                       name="term-value"
+                                       class="sum-value"
+                                       id="term-value-2"
+                                       value="15" />
+                                <p class="currency">МІСЯЦІВ</p>
+                            </div>
+                        </div>
+                        <div class="scroll">
+                            <input type="range"
+                                   name="scroll"
+                                   id="small-scroll-2"
+                                   min="6"
+                                   max="120"
+                                   value="15"
+                                   step="1" />
+                        </div>
+                        <div class="min-and-max">
+                            <p>6</p>
+                            <p>120</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="every-month">
+                    <p>Щомісячний платіж, грн. :&nbsp;</p>
+                    <p class="month-payment">1225.00</p>
+                </div>
+                <div class="offset-lg-2 col-lg-8 contain-credit-main-content">
+                    <div class="my-row">
+                        <div class="my-row-name">
+                            <p>Сума кредиту</p>
+                        </div>
+                        <div class="my-row-value">
+                            <p id="my-row-sum-of-credit">15000 грн</p>
+                        </div>
+                    </div>
+                    <div class="my-row">
+                        <div class="my-row-name">
+                            <p>Процентна ставка, % річних</p>
+                        </div>
+                        <div class="my-row-value">
+                            <p>18%</p>
+                        </div>
+                    </div>
+                    <div class="my-row">
+                        <div class="my-row-name">
+                            <p>Щомісячна комісія, на весь строк кредиту</p>
+                        </div>
+                        <div class="my-row-value">
+                            <p>0%</p>
+                        </div>
+                    </div>
+                    <div class="my-row">
+                        <div class="my-row-name">
+                            <p>Загальні витрати за споживчим кредитом</p>
+                        </div>
+                        <div class="my-row-value">
+                            <p id="expenses">3375 грн</p>
+                        </div>
+                    </div>
+                    <div class="my-row">
+                        <div class="my-row-name">
+                            <p>
+                                Орієнтовна загальна вартість кредиту <br />для клієнта за весь
+                                строк користування кредитом
+                            </p>
+                        </div>
+                        <div class="my-row-value">
+                            <p id="expenses2">18375 грн</p>
+                        </div>
+                    </div>
+                    <div class="my-row border-0">
+                        <div class="my-row-name">
+                            <p>Реальна річна процентна ставка, % річних</p>
+                        </div>
+                        <div class="my-row-value">
+                            <p>37 %</p>
+                        </div>
+                    </div>
+                    <div class="animate">
+                        <button class="btn get-credit-animate">Отримати кредит</button>
+                    </div>
+                </div>
+            </div>
+            <div class="terms-credit">
+                <h2>Умови отримання кредиту</h2>
+                <div class="terms-credit-cards">
+                    <div class="my-card">
+                        <img src="/images/CreditsPage/18+.png" alt="18+" />
+                        <p>Вік від 18 до 65 років</p>
+                    </div>
+                    <div class="my-card">
+                        <img src="/images/CreditsPage/trident.png" alt="Тризуб" />
+                        <p>Громадянство України</p>
+                    </div>
+                    <div class="my-card">
+                        <img src="/images/CreditsPage/banknote.png" alt="Банкнота" />
+                        <p>Постійне джерело доходу</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @await Html.PartialAsync("_FooterPartial")
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+
+    <script src="~/js/credits.js"></script>
+    <script src="~/js/start.js"></script>
+    <script src="~/js/formSubmit.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+﻿@{
+    ViewData["Title"] = "MainPage";
+    ViewData["Styles"] = "/css/styles.min.css";
+    ViewData["Scripts"] = "/js/scripts.js";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<main class="main">
+    <div class="owl-carousel owl-theme">
+        <div class="item1">
+            <div class="row">
+                <div class="offset-lg-1 col-lg-5 col-12 content">
+                    <h2 id="content-header">
+                        Кредити під мінімальний відсоток річних
+                    </h2>
+                    <p id="content-subtitle">
+                        Тільки в нашому банку Ви знайдете кредити до 100000 грн. Не
+                        втрачайте можливість!
+                    </p>
+                    <a asp-controller="Credit" asp-action="Index" type="button" class="btn" id="info">ДЕТАЛЬНІШЕ</a>
+                </div>
+                <div class="col-lg-5 content-image">
+                    <img src="/images/MainPage/content1.png"
+                         alt="Фото"
+                         id="content-image" />
+                </div>
+            </div>
+        </div>
+        <div class="item2">
+            <div class="row">
+                <div class="offset-lg-1 col-lg-5 col-12 content">
+                    <h2 id="content-header">
+                        Швидка допомога від співробітників банку
+                    </h2>
+                    <p id="content-subtitle">
+                        Онлайн допомога цілодобово. Звертайтесь за телефоном
+                        <a href="tel:+380 (760) 56-24-33" class="phone">+380 (760) 56-24-33</a>
+                    </p>
+                    <a asp-controller="Home" asp-action="AboutBank" type="button" class="btn" id="info">ДЕТАЛЬНІШЕ</a>
+                </div>
+                <div class="col-lg-5 content-image">
+                    <img src="/images/MainPage/content2.png"
+                         alt="Фото"
+                         id="content-image" />
+                </div>
+            </div>
+        </div>
+        <div class="item3">
+            <div class="row">
+                <div class="offset-lg-1 col-lg-5 col-12 content">
+                    <h2 id="content-header">
+                        100-процентна державна гарантія вкладів
+                    </h2>
+                    <p id="content-subtitle">
+                        Тепер гарантії за вкладом становлять 100% суми вкладу та
+                        нарахованих процентів.
+                    </p>
+                    <a asp-controller="Home" asp-action="Terms" type="button" class="btn" id="info">ДЕТАЛЬНІШЕ</a>
+                </div>
+                <div class="col-lg-5 content-image">
+                    <img src="/images/MainPage/content3.png"
+                         alt="Фото"
+                         id="content-image" />
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+

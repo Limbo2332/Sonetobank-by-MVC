@@ -1,0 +1,151 @@
+﻿body {
+  background-image: url(/images/Login_Register/bg.jpg);
+}
+
+.register-container {
+  display: flex;
+  position: absolute;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.register-container .login {
+  background: #ebeaea;
+  border: 1px solid #000000;
+  font-family: "Nunito";
+  font-style: normal;
+  letter-spacing: 0.02em;
+  margin: auto;
+  vertical-align: middle;
+}
+.register-container .login .close {
+  position: relative;
+}
+.register-container .login .close img {
+  position: absolute;
+  top: 29px;
+  right: 15px;
+  cursor: pointer;
+}
+.register-container .login-from {
+  padding-top: 20px;
+  margin-bottom: 20px;
+  color: #232323;
+  text-align: center;
+  font-weight: 700;
+  font-size: 24px;
+}
+.register-container .login .icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.register-container .login .icons form#external-account {
+  width: 48%;
+  text-align: center;
+}
+.register-container .login button[type=submit] {
+  margin: 11px 0;
+  background-color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.register-container .login button[type=submit] img {
+  padding: 10px 0;
+}
+.register-container .login button[type=submit] span {
+  color: #232323;
+  margin-left: 6px;
+}
+.register-container .login .facebook {
+  width: 100%;
+  margin: 0 auto;
+}
+.register-container .login .password {
+  position: relative;
+}
+.register-container .login .password img {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+}
+.register-container .login .password #password,
+.register-container .login .password #passwordconfirm {
+  margin-top: 16px;
+}
+.register-container .login .input {
+  display: block;
+  margin: 0 auto;
+  padding: 12px 14px;
+  width: 100%;
+  background-color: #fff;
+  border: none;
+  border-radius: 10px;
+}
+.register-container .login .input::placeholder {
+  color: rsgba(0, 0, 0, 0.5);
+  padding-left: 5px;
+  font-size: 14px;
+}
+.register-container .login .input:focus-visible {
+  outline: 1px solid greenyellow;
+}
+.register-container .login .text-register {
+  margin-top: 14px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 14px;
+}
+.register-container .login .text-register a {
+  color: #006a1e;
+  font-weight: 700;
+}
+.register-container .login input[type=submit] {
+  display: block;
+  margin: 15px auto 0;
+  font-weight: 700;
+  font-size: 16px;
+  color: #fff;
+  background: rgba(255, 107, 0, 0.88);
+  border-radius: 104px;
+  padding: 10px 40px;
+}
+.register-container .login input[type=submit]:hover, .register-container .login input[type=submit]:active {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), rgba(255, 107, 0, 0.88);
+}
+.register-container .login .have-account {
+  display: block;
+  margin: 30px auto 15px;
+  text-align: center;
+  text-underline-offset: 3px;
+  background: inherit;
+  color: #232323;
+  font-weight: 500;
+  font-size: 18px;
+}
+.register-container .wrapper {
+  padding: 20px;
+}
+
+@media (min-width: 768px) {
+  .login {
+    width: 60%;
+  }
+}
+@media (min-width: 992px) {
+  .login {
+    width: 40%;
+  }
+}
+@media (min-width: 1200px) {
+  .login {
+    width: 33%;
+  }
+}

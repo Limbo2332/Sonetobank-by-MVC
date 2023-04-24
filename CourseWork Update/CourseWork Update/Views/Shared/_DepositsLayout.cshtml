@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Active"] = "active";
+    IEnumerable<string> photoNumbers = ViewBag.photoNumbers;
+    IEnumerable<string> photoDescriptions = ViewBag.photoDescriptions;
+    DepositsInfoModel model = ViewBag.model;
+    double depositSum = double.Parse(ViewData["DepositSum"]!.ToString()!);
+}
+@using CourseWork_Update.Helpers
+@using CourseWork_Update.Models.Deposits;
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="~/images/main icon.png" type="image/png" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/components.min.css" type="text/css" />
+    <link rel="stylesheet" href="~/css/deposits/card.min.css" type="text/css" />
+    <title>@ViewData["Title"]</title>
+</head>
+<body>
+    @await Html.PartialAsync("_HeaderPartial")
+    <div class="container">
+        @await Html.PartialAsync("_NavbarPartial")
+        @Html.CreateMainSection(ViewData["Title"]!.ToString()!, ViewData["Description"]!.ToString()!, photoNumbers, photoDescriptions, model)
+        @Html.CreateIncomeSection(depositSum, model)
+        @RenderBody()
+    </div>
+    @await Html.PartialAsync("_DepositsPartial")
+
+    @await Html.PartialAsync("_FooterPartial")
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+
+    <script src="~/js/start.js"></script>
+    <script src="~/js/deposits.js"></script>
+    <script src="~/js/formSubmit.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,40 @@
+﻿@page
+@using CourseWork_Update.Areas.Identity.Pages.Account.Manage
+@model EmailModel
+@{
+    ViewData["Title"] = "Змінити Email";
+    ViewData["ActivePage"] = ManageNavPages.Email;
+}
+
+<partial name="_StatusMessage" for="StatusMessage" />
+<div class="row">
+    <div class="offset-md-1 col-md-10 offset-2 col-10 mt-2">
+        <form id="email-form" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @if (Model.IsEmailConfirmed)
+            {
+                <div class="group-input">
+                    <label asp-for="Email"></label>
+                    <input asp-for="Email" disabled class="input" />
+                </div>
+            }
+            else
+            {
+                <div class="group-input">
+                    <label asp-for="Email"></label>
+                    <input asp-for="Email" disabled class="input" />
+                    <input id="email-verification" type="submit" asp-page-handler="SendVerificationEmail" class="btn" value="Відправити підтвердження Email">
+                </div>
+
+            }
+            <div class="group-input">
+                <label asp-for="Input.NewEmail"></label>
+                <input asp-for="Input.NewEmail" class="input" autocomplete="email" aria-required="true" />
+                <span asp-validation-for="Input.NewEmail" class="text-danger"></span>
+            </div>
+            <input id="change-email-button" type="submit" asp-page-handler="ChangeEmail" value="Змінити">
+        </form>
+    </div>
+</div>
+
+@await Html.PartialAsync("_ValidationScriptsPartial")

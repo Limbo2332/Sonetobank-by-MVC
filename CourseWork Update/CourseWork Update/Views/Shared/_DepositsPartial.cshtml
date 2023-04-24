@@ -1,0 +1,61 @@
+﻿@model DepositModel
+
+<div class="right-side">
+    <div class="container">
+        <div class="offset-lg-3 col-lg-6">
+            <h1 class="text-center">Заявка на депозит</h1>
+            <form method="post" id="form">
+                <div class="first line">
+                    <div class="name">
+                        <p>Ім'я</p>
+                        <input type="text" placeholder="Введіть ваше ім'я" asp-for="Name" />
+                        <span asp-validation-for="Name"></span>
+                    </div>
+                    <div class="surname">
+                        <p>Прізвище</p>
+                        <input type="text" placeholder="Введіть ваше прізвище" asp-for="Surname" />
+                        <span asp-validation-for="Surname"></span>
+                    </div>
+                </div>
+                <div class="second line">
+                    <div class="phone-number">
+                        <p>Номер телефону</p>
+                        <input type="text" placeholder="+380102030400" asp-for="PhoneNumber" value=@ViewBag.PhoneNumber />
+                        <span asp-validation-for="PhoneNumber"></span>
+                    </div>
+                    <div class="passport-number">
+                        <p>Номер паспорту</p>
+                        <input type="text" placeholder="12345678" asp-for="PassportNumber" />
+                        <span asp-validation-for="PassportNumber"></span>
+                    </div>
+                </div>
+                <p class="birth">Дата народження</p>
+                <div class="third line">
+                    <div class="day select">
+                        <select id="day" asp-items="ViewBag.Days" asp-for="BirthDay">
+                            <option selected="selected">День</option>
+                        </select>
+                        <img src="/images/CreditsPage/arrow down.png" alt="Розкрити" />
+                    </div>
+                    <div class="month select">
+                        <select id="month" asp-items="@Html.GetEnumSelectList<BirthMonth>()" asp-for="BirthMonth">
+                            <option selected="selected">Місяць</option>
+                        </select>
+                        <img src="/images/CreditsPage/arrow down.png" alt="Розкрити" />
+                    </div>
+                    <div class="year select border-0">
+                        <select id="year" asp-items="ViewBag.Years" asp-for="BirthYear">
+                            <option selected="selected">Рік</option>
+                        </select>
+                        <img src="/images/CreditsPage/arrow down.png" alt="Розкрити" />
+                    </div>
+                </div>
+                <span asp-validation-for="BirthDate" class="text-center" id="BirthDate"></span>
+                <p class="text-center pb-1">
+                    18 років - мінімальний вік для отримання депозиту
+                </p>
+                <input type="submit" class="btn" value="ОТРИМАТИ ДЕПОЗИТ" />
+            </form>
+        </div>
+    </div>
+</div>

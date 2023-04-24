@@ -1,0 +1,83 @@
+$content-color: #006A1E;
+$second-content-color: #008024;
+
+main{
+  margin-top: 72px;
+
+  & .main-header{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      font-weight: 700;
+      font-size: 24px;
+
+      &-h{
+        margin-left: 20px;
+        color: $content-color;
+      }
+
+      & button{
+        margin-right: 20px;
+
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #00FF47;
+
+        & p{
+          color: #fff;
+
+          text-shadow: 1px 0 rgba(27, 13, 13, 0.5);;
+          padding: 5px 14px;
+
+          font-weight: 700;
+          font-size: 24px;
+        }
+      }
+  }
+  & .first{
+    margin-left: 48px;
+    margin-top: 36px;
+    margin-right: 20px;
+  }
+  & .credit{
+    margin-left: 48px;
+    margin-top: 36px;
+    margin-right: 20px;
+
+    &-line{
+      border-bottom: 1px solid rgba(0, 0, 0, 0.5);;
+    }
+
+    &-header{
+      font-weight: 700;
+      font-size: 24px;
+      color: $second-content-color;
+      
+      padding-bottom: 16px;
+    }
+
+    &-content{
+      margin-top: 14px;
+
+      & ol {
+        list-style-type: none; 
+        counter-reset:  item; 
+       }
+
+      & li{
+        padding-bottom: 14px;
+        font-weight: 700;
+        font-size: 14px;
+        color: #545454;
+
+        &::before {
+          content: '1.' counter(item) ' '; 
+          counter-increment: item; 
+         }
+      }
+      & .deposit-ol li::before{
+        content: '2.' counter(item) ' '; 
+        counter-increment: item; 
+      }
+    }
+  }
+}

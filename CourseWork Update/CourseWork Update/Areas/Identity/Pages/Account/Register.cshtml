@@ -1,0 +1,88 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Реєстрація";
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="~/css/components.min.css" type="text/css" />
+    <link rel="stylesheet" href="~/css/register.min.css" type="text/css" />
+    <title>@ViewData["Title"]</title>
+</head>
+<body>
+    <div class="register-container">
+        <div class="login">
+            <div class="wrapper">
+                <div class="close">
+                    <p class="login-from">Реєстрація через</p>
+                </div>
+
+                <div class="icons">
+                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                        <button type="submit" name="provider" value="@Model.ExternalLogins[0].Name">
+                            <img src="~/images/Login_Register/google icon.png" alt="google" />
+                            <span>Google</span>
+                        </button>
+                    </form>
+
+                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                        <button type="submit" name="provider" value="@Model.ExternalLogins[2].Name">
+                            <img src="~/images/Login_Register/twitter icon.png" alt="twitter" />
+                            <span>Twitter</span>
+                        </button>
+                    </form>
+                </div>
+                <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                    <button type="submit" name="provider" value="@Model.ExternalLogins[1].Name">
+                        <img src="~/images/Login_Register/facebook icon.png" alt="facebook" />
+                        <span>Facebook</span>
+                    </button>
+                </form>
+                <p class="login-from">або E-mail</p>
+                <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input asp-for="Input.Email" autocomplete="username" aria-required="true" placeholder="E-mail*" class="input" />
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                    <div class="password">
+                        <input asp-for="Input.Password" autocomplete="new-password" aria-required="true" placeholder="Пароль"
+                               id="password"
+                               class="input" />
+                        <span asp-validation-for="Input.Password" class="text-danger"></span>
+                        <img src="~/images/Login_Register/eye icon default.png"
+                             alt="скрити"
+                             class="eye-icon" />
+                    </div>
+                    <div class="password">
+                        <input asp-for="Input.ConfirmPassword" autocomplete="new-password" aria-required="true" placeholder="Повторіть пароль"
+                               id="passwordconfirm"
+                               class="input" />
+                        <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                        <img src="~/images/Login_Register/eye icon default.png"
+                             alt="скрити"
+                             class="eye-icon-2" />
+                    </div>
+                    <p class="text-register">
+                        Натиснувши на кнопку “Зареєструватися”, <br />Ви погоджуєтесь з
+                        <a asp-controller="Home" asp-action="Terms">умовами використання.</a>
+                    </p>
+                    <input type="submit" value="ЗАРЕЄСТРУВАТИСЯ" class="btn" />
+                    <a asp-page="./Login" class="have-account">Вже є акаунт</a>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/start.js"></script>
+</body>
+</html>
+
+@await Html.PartialAsync("_ValidationScriptsPartial")

@@ -1,0 +1,62 @@
+﻿[
+  {
+    "outputFile": "wwwroot/css/about.css",
+    "inputFile": "wwwroot/sass/about.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/components.css",
+    "inputFile": "wwwroot/sass/components.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/credits.css",
+    "inputFile": "wwwroot/sass/credits.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/login.css",
+    "inputFile": "wwwroot/sass/login.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/recover.css",
+    "inputFile": "wwwroot/sass/recover.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/register.css",
+    "inputFile": "wwwroot/sass/register.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/styles.css",
+    "inputFile": "wwwroot/sass/styles.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/terms.css",
+    "inputFile": "wwwroot/sass/terms.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/deposits/card.css",
+    "inputFile": "wwwroot/sass/deposits/card.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/deposits/deposits.css",
+    "inputFile": "wwwroot/sass/deposits/deposits.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/resetpassword.css",
+    "inputFile": "wwwroot/sass/resetpassword.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/cabinet.css",
+    "inputFile": "wwwroot/sass/cabinet.scss"
+  },
+  {
+    "outputFile": "wwwroot/js/credits.es5.js",
+    "inputFile": "wwwroot/js/credits.js"
+  },
+  {
+    "outputFile": "wwwroot/js/scripts.es5.js",
+    "inputFile": "wwwroot/js/scripts.js"
+  },
+  {
+    "outputFile": "wwwroot/js/start.es5.js",
+    "inputFile": "wwwroot/js/start.js"
+  }
+]

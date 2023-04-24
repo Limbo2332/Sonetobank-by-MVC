@@ -1,0 +1,183 @@
+$login-bg: #ebeaea;
+$login-text: #232323;
+$login-button-bg: rgba(255, 107, 0, 0.88);
+$registration-color: rgba(0, 106, 30, 1);
+
+$white: #fff;
+
+body {
+    background-image: url(/images/Login_Register/bg.jpg);
+}
+
+.register-container {
+    display: flex;
+    position: absolute;
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    & .login {
+        background: $login-bg;
+        border: 1px solid #000000;
+        font-family: "Nunito";
+        font-style: normal;
+        letter-spacing: 0.02em;
+        margin: auto;
+        vertical-align: middle;
+
+        & .close {
+            position: relative;
+
+            & img {
+                position: absolute;
+                top: 29px;
+                right: 15px;
+                cursor: pointer;
+            }
+        }
+
+        &-from {
+            padding-top: 20px;
+            margin-bottom: 20px;
+            color: $login-text;
+            text-align: center;
+            font-weight: 700;
+            font-size: 24px;
+        }
+
+        & .icons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            & form#external-account {
+                width: 48%;
+                text-align: center;
+            }
+        }
+
+        & button[type="submit"] {
+            margin: 11px 0;
+            background-color: $white;
+            border-radius: 10px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+
+            & img {
+                padding: 10px 0;
+            }
+
+            & span {
+                color: $login-text;
+                margin-left: 6px;
+            }
+        }
+
+        & .facebook {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        & .password {
+            position: relative;
+
+            & img {
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                cursor: pointer;
+            }
+
+            & #password,
+            #passwordconfirm {
+                margin-top: 16px;
+            }
+        }
+
+        & .input {
+            display: block;
+            margin: 0 auto;
+            padding: 12px 14px;
+            width: 100%;
+            background-color: $white;
+            border: none;
+            border-radius: 10px;
+
+            &::placeholder {
+                color: rsgba(0, 0, 0, 0.5);
+                padding-left: 5px;
+                font-size: 14px;
+            }
+
+            &:focus-visible {
+                outline: 1px solid greenyellow;
+            }
+        }
+
+        & .text-register {
+            margin-top: 14px;
+            text-align: center;
+            font-weight: 500;
+            font-size: 14px;
+
+            & a {
+                color: $registration-color;
+                font-weight: 700;
+            }
+        }
+
+        & input[type="submit"] {
+            display: block;
+            margin: 15px auto 0;
+            font-weight: 700;
+            font-size: 16px;
+            color: $white;
+            background: $login-button-bg;
+            border-radius: 104px;
+            padding: 10px 40px;
+
+            &:hover,
+            &:active {
+                background: linear-gradient( 0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), $login-button-bg;
+            }
+        }
+
+        & .have-account {
+            display: block;
+            margin: 30px auto 15px;
+            text-align: center;
+            text-underline-offset: 3px;
+            background: inherit;
+            color: $login-text;
+            font-weight: 500;
+            font-size: 18px;
+        }
+    }
+
+    & .wrapper {
+        padding: 20px;
+    }
+}
+
+@media (min-width: 768px) {
+    .login {
+        width: 60%;
+    }
+}
+
+@media (min-width: 992px) {
+    .login {
+        width: 40%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .login {
+        width: 33%;
+    }
+}

@@ -1,0 +1,13 @@
+﻿@page
+@model ConfirmEmailModel
+@{
+    ViewData["Title"] = "Підтвердження email";
+    ViewData["Styles"] = "/css/resetpassword.min.css";
+}
+<main class="main">
+    <partial name="_StatusMessage" model="Model.StatusMessage" />
+    <div class="offset-lg-5 col-lg-3 col-md-4 col-sm-5 gotomainpage">
+        <a asp-controller="Home" asp-action="MainPage">На головну сторінку</a>
+    </div>
+
+</main>

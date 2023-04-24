@@ -1,0 +1,118 @@
+﻿@{
+    ViewData["Title"] = "Депозити";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="~/images/main icon.png" type="image/png" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/components.min.css" type="text/css" />
+    <link rel="stylesheet" href="~/css/deposits/deposits.min.css" type="text/css" />
+    <title>@ViewData["Title"]</title>
+</head>
+<body>
+    @await Html.PartialAsync("_HeaderPartial")
+
+    <div class="container">
+        @await Html.PartialAsync("_NavbarPartial")
+
+        <main class="cards">
+            <div class="card">
+                <h4>"ПЕРСПЕКТИВНИЙ"</h4>
+                <div class="content">
+                    <p>
+                        Депозит «Перспективний» зі ставкою, що зростає, та можливістю
+                        повного дострокового повернення вкладу без втрати процентів.
+                    </p>
+                </div>
+
+                <img src="/images/DepositsPage/icon1.png" alt="Іконка" />
+                <a asp-controller="Deposit" asp-action="Perspective" class="btn">Перейти</a>
+            </div>
+            <div class="card">
+                <h4>"НАКОПИЧУВАЛЬНИЙ"</h4>
+                <div class="content">
+                    <p>
+                        Поповнюйте свій депозит будь-коли та отримуйте максимальний дохід
+                        у кінці сроку.
+                    </p>
+                </div>
+
+                <img src="/images/DepositsPage/icon2.png" alt="Іконка" />
+                <a asp-controller="Deposit" asp-action="Nakopychuvalnyi" class="btn">Перейти</a>
+            </div>
+            <div class="card">
+                <h4>"ОЩАДНИЙ"</h4>
+                <div class="content">
+                    <p>
+                        Поповнюйте депозит в будь-який час або частково знімайте кошти без
+                        штрафних санкцій.
+                    </p>
+                </div>
+                <img src="/images/DepositsPage/icon3.png" alt="Іконка" />
+                <a asp-controller="Deposit" asp-action="Oshchadniy" class="btn">Перейти</a>
+            </div>
+
+            <div class="card">
+                <h4>"ДИТЯЧИЙ"</h4>
+                <div class="content">
+                    <p>
+                        Накопичуйте кошти до повноліття дитини та створюйте матеріальну
+                        основу для отримання бажаної освіти, придбання омріяного житла та
+                        всього необхідного.
+                    </p>
+                </div>
+                <img src="/images/DepositsPage/icon4.png" alt="Іконка" />
+                <a asp-controller="Deposit" asp-action="Kids" class="btn">Перейти</a>
+            </div>
+            <div class="card">
+                <h4>"МОБІЛЬНІ ЗАОЩАДЖЕННЯ"</h4>
+                <div class="content">
+                    <p>
+                        Додатковий дохід та швидке управління тимчасово вільними коштами
+                        за допомогою картки та мобільного додатку.
+                    </p>
+                </div>
+                <img src="/images/DepositsPage/icon5.png" alt="Іконка" />
+                <a asp-controller="Deposit" asp-action="Mobile" class="btn">Перейти</a>
+            </div>
+            <div class="card">
+                <h4>"СТРОКОВИЙ"</h4>
+                <div class="content">
+                    <p>
+                        Розміщуйте кошти та гарантовано отримайте максимально можливий
+                        дохід навіть протягом короткого строку.
+                    </p>
+                </div>
+                <img src="/images/DepositsPage/icon6.png" alt="Іконка" />
+                <a asp-controller="Deposit" asp-action="Strokoviy" class="btn">Перейти</a>
+            </div>
+        </main>
+        <div class="terms">
+            <h2>Умови отримання депозиту</h2>
+            <div class="terms-cards">
+                <div class="my-card">
+                    <img src="/images/CreditsPage/18+.png" alt="18+" />
+                    <p>Вік від 18 до 65 років</p>
+                </div>
+                <div class="my-card">
+                    <img src="/images/CreditsPage/trident.png" alt="Тризуб" />
+                    <p>Громадянство України</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @await Html.PartialAsync("_FooterPartial")
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+
+    <script src="~/js/start.js"></script>
+</body>
+</html>
+
+

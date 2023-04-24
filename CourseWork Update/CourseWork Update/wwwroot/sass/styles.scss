@@ -1,0 +1,161 @@
+$main-bg: #e7ffe1;
+$navbar-bg: #00ff47;
+$content-header-text: rgba(84, 84, 84, 1);
+$slider-switcher: #0c0c0c;
+$white: #fff;
+
+.main {
+    margin-top: 80px;
+    color: $content-header-text;
+    font-family: "Nunito";
+    font-style: normal;
+    letter-spacing: 0.02em;
+    text-align: left;
+
+    & .row {
+        align-items: center;
+    }
+
+    & h2 {
+        font-weight: 800;
+        font-size: 48px;
+    }
+
+    & p {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-weight: 200;
+        font-size: 20px;
+    }
+
+    & .phone {
+        text-decoration: none;
+        color: $content-header-text;
+    }
+
+    & a[type="button"] {
+        color: $white;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), $navbar-bg;
+        border-radius: 15px;
+        padding: 14px 80px;
+        margin-top: 16px;
+        font-weight: 700;
+        font-size: 24px;
+
+        &:hover {
+            color: $white;
+            background: linear-gradient( 0deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35) ), $navbar-bg;
+        }
+    }
+
+    & .content-image {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+    }
+
+    & .owl-prev,
+    .owl-next {
+        width: 48px;
+        height: 48px;
+    }
+
+    & .owl-prev {
+        background: url(/images/MainPage/arrows/left\ arrow\ default.png) !important;
+        margin-right: 24px !important;
+
+        &:hover {
+            background: url(/images/MainPage/arrows/left\ arrow\ hover.png) !important;
+        }
+
+        &:active {
+            background: url(/images/MainPage/arrows/left\ arrow\ active.png) !important;
+        }
+    }
+
+    & .owl-next {
+        background: url(/images/MainPage/arrows/right\ arrow\ default.png) !important;
+
+        &:hover {
+            background: url(/images/MainPage/arrows/right\ arrow\ hover.png) !important;
+        }
+
+        &:active {
+            background: url(/images/MainPage/arrows/right\ arrow\ active.png) !important;
+        }
+    }
+}
+
+@media (min-width: 0) {
+    #content-header,
+    #content-subtitle {
+        text-align: center;
+    }
+
+    #content-image {
+        max-width: 300px;
+        margin-top: 25px;
+    }
+
+    #info {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .main {
+        margin-top: 32px;
+
+        & .item2 .content-image {
+            margin-top: 72px;
+        }
+
+        & a[type="button"] {
+            width: 80%;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    #info {
+        display: inline-block;
+    }
+
+    .content {
+        text-align: center;
+    }
+}
+
+@media (min-width: 992px) {
+    #info {
+        display: inline-block;
+    }
+
+    .content {
+        text-align: left;
+    }
+
+    #content-header,
+    #content-subtitle {
+        text-align: left;
+    }
+
+    #content-image {
+        max-width: 425px;
+        max-height: 300px;
+        margin-top: 25px;
+    }
+
+    .main {
+        margin-top: 64px;
+
+        & .item2 .content-image {
+            margin-top: 0;
+        }
+
+        & a[type="button"] {
+            width: auto;
+        }
+    }
+}

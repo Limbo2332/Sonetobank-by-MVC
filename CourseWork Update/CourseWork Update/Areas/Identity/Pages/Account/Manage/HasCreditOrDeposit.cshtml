@@ -1,0 +1,195 @@
+﻿@page
+@using CourseWork_Update.Areas.Identity.Pages.Account.Manage
+@using CourseWork_Update.Models
+@model HasCreditOrDepositModel
+@{
+    ViewData["Title"] = "Інформація про кредит чи депозит";
+    ViewData["ActivePage"] = ManageNavPages.InfoAboutCreditsOrDeposits;
+    CreditModel credit = (CreditModel)ViewData["Credit"]!;
+    DepositModel deposit = (DepositModel)ViewData["Deposit"]!;
+
+    // Count credit/deposit values
+
+    if (ViewData["Info"]?.ToString() == "credit" && credit != null)
+    {
+        double p = 0.015;
+
+        double general_expense = Math.Round((double)credit.CreditSum * credit.Term * p, 2);
+        double expenses2 = general_expense + (double)credit.CreditSum;
+        double month_payment = Math.Round(expenses2 / credit.Term, 2);
+
+        ViewBag.expence = general_expense;
+        ViewBag.expence2 = expenses2;
+        ViewBag.monthPayment = month_payment;
+    }
+
+    if (ViewData["Info"]?.ToString() == "deposit" && deposit != null)
+    {
+        double beforeTax = Math.Round(deposit.DepositSum * deposit.PercentBeforeTax * deposit.Term * 30.5 / 36000, 2);
+        double tax = Math.Round(beforeTax * 0.18, 2);
+        double millitaryTax = Math.Round(beforeTax * 0.015, 2);
+        double afterTax = Math.Round(beforeTax - tax - millitaryTax, 2);
+
+        ViewBag.beforeTax = beforeTax;
+        ViewBag.tax = tax;
+        ViewBag.millitaryTax = millitaryTax;
+        ViewBag.afterTax = afterTax;
+    }
+}
+
+@if (ViewData["Info"]?.ToString() == "null")
+{
+    <h3 class="text-center">У вас немає кредиту чи депозиту</h3>
+    <div class="animate">
+        <a class="btn get-credit-animate" asp-controller="Credit" asp-action="Index">Отримати кредит</a>
+        <a class="btn get-credit-animate" asp-controller="Deposit" asp-action="Index">Отримати депозит</a>
+    </div>
+}
+else if (ViewData["Info"]?.ToString() == "credit" && credit != null)
+{
+    <h3 class="text-center" style="color: lightcoral;">У вас є кредит!</h3>
+    <div class="contain-credit">
+        <div class="contain-credit-main-content">
+            <div class="my-row">
+                <div class="my-row-name">
+                    <p>Сума кредиту</p>
+                </div>
+                <div class="my-row-value">
+                    <p>@credit.CreditSum грн</p>
+                </div>
+            </div>
+            <div class="my-row">
+                <div class="my-row-name">
+                    <p>Строк кредиту, міс.</p>
+                </div>
+                <div class="my-row-value">
+                    <p>@credit.Term місяців</p>
+                </div>
+            </div>
+            <div class="my-row">
+                <div class="my-row-name">
+                    <p>Щомісячний платіж</p>
+                </div>
+                <div class="my-row-value">
+                    <p>@ViewBag.monthPayment грн</p>
+                </div>
+            </div>
+            <div class="my-row">
+                <div class="my-row-name">
+                    <p>Процентна ставка, % річних</p>
+                </div>
+                <div class="my-row-value">
+                    <p>18%</p>
+                </div>
+            </div>
+            <div class="my-row">
+                <div class="my-row-name">
+                    <p>Щомісячна комісія, на весь строк кредиту</p>
+                </div>
+                <div class="my-row-value">
+                    <p>0%</p>
+                </div>
+            </div>
+            <div class="my-row">
+                <div class="my-row-name">
+                    <p>Загальні витрати за споживчим кредитом</p>
+                </div>
+                <div class="my-row-value">
+                    <p>@ViewBag.expence грн</p>
+                </div>
+            </div>
+            <div class="my-row">
+                <div class="my-row-name">
+                    <p>
+                        Орієнтовна загальна вартість кредиту <br />для клієнта за весь
+                        строк користування кредитом
+                    </p>
+                </div>
+                <div class="my-row-value">
+                    <p>@ViewBag.expence2 грн</p>
+                </div>
+            </div>
+            <div class="my-row border-0">
+                <div class="my-row-name">
+                    <p>Реальна річна процентна ставка, % річних</p>
+                </div>
+                <div class="my-row-value">
+                    <p>37 %</p>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+else if (ViewData["Info"]?.ToString() == "deposit" && deposit != null)
+{
+    <h3 class="text-center" style="color: lightcoral;">У вас є депозит!</h3>
+    <div class="table">
+        <div class="my-row">
+            <div class="my-row-name">
+                <p>Сума депозиту</p>
+            </div>
+            <div class="my-row-value">
+                <p>@deposit.DepositSum грн</p>
+            </div>
+        </div>
+        <div class="my-row">
+            <div class="my-row-name">
+                <p>Строк вкладу (міс.)</p>
+            </div>
+            <div class="my-row-value">
+                <p>@deposit.Term</p>
+            </div>
+        </div>
+        <div class="my-row">
+            <div class="my-row-name">
+                <p>Відсоткова ставка (до сплати податків)</p>
+            </div>
+            <div class="my-row-value">
+                <p>@deposit.PercentBeforeTax %</p>
+            </div>
+        </div>
+        <div class="my-row">
+            <div class="my-row-name">
+                <p>Сума доходу до оподаткування</p>
+            </div>
+            <div class="my-row-value fw-bold">
+                <p>@ViewBag.beforeTax грн</p>
+            </div>
+        </div>
+        <div class="my-row">
+            <div class="my-row-name">
+                <p>Податок на доходи фізичних осіб (18%)</p>
+            </div>
+            <div class="my-row-value">
+                <p>@ViewBag.tax грн</p>
+            </div>
+        </div>
+        <div class="my-row">
+            <div class="my-row-name">
+                <p>Військовий збір (1.5%)</p>
+            </div>
+            <div class="my-row-value">
+                <p>@ViewBag.millitaryTax грн</p>
+            </div>
+        </div>
+        <div class="my-row">
+            <div class="my-row-name">
+                <p>Сума доходу після оподаткування</p>
+            </div>
+            <div class="my-row-value">
+                <p>@ViewBag.afterTax грн</p>
+            </div>
+        </div>
+        <div class="my-row border-0">
+            <div class="my-row-name">
+                <p>Відсоткова ставка після сплати податків</p>
+            </div>
+            <div class="my-row-value">
+                <p>@deposit.PercentAfterTax %</p>
+            </div>
+        </div>
+    </div>
+}
+
+
+@await Html.PartialAsync("_ValidationScriptsPartial")

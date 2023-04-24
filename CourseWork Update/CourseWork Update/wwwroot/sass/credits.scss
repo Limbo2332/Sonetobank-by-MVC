@@ -1,0 +1,606 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Prosto+One&display=swap");
+
+$button: #96bb00;
+$table-color: #343434;
+$scroll-color-not: #a4a4a4;
+$get-credit: #ff2b2b;
+$content-header: #545454;
+$login-text: #232323;
+$content-color: #014272;
+$white: #fff;
+
+.main {
+    background-color: $content-color;
+    margin-top: 36px;
+
+    &-content {
+        color: $white;
+        text-align: center;
+
+        & h1 {
+            font-weight: 900;
+            font-size: 64px;
+            margin-top: 60px;
+        }
+
+        & p {
+            font-family: "Prosto One";
+            font-weight: 400;
+            font-size: 36px;
+        }
+    }
+
+    & .cache {
+        text-align: center;
+
+        & img {
+            max-width: 400px;
+        }
+    }
+}
+
+.animate {
+    text-align: center;
+}
+
+.get-credit-animate {
+    color: $white;
+    background-color: $button;
+    border-radius: 100px;
+    font-weight: 800;
+    font-size: 20px;
+    text-transform: uppercase;
+    padding: 16px 32px;
+    margin-top: 40px;
+    margin-bottom: 64px;
+
+    &:hover {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), $button;
+        color: $white;
+    }
+}
+
+.terms {
+    margin-top: 48px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: $table-color;
+
+    & h2 {
+        font-size: 48px;
+        margin-bottom: 24px;
+    }
+
+    & td {
+        font-size: 18px;
+        padding: 20px;
+    }
+}
+
+.form {
+    background-color: $content-color;
+    margin-top: 96px;
+
+    & .left-side {
+        color: $white;
+        margin-top: 96px;
+        margin-bottom: 96px;
+        text-align: center;
+
+        & h2 {
+            font-weight: 600;
+            font-size: 36px;
+        }
+
+        & .everymonthpayment {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            & p:nth-child(1) {
+                font-weight: 600;
+                font-size: 20px;
+            }
+
+            & p:nth-child(2) {
+                font-weight: 700;
+                font-size: 24px;
+            }
+        }
+    }
+
+    & .right-side {
+        color: $white;
+        margin-top: 96px;
+        margin-bottom: 96px;
+
+        & span {
+            display: block;
+
+            color: lightcoral;
+            margin-top: 6px;
+            font-weight: 700;
+            padding-left: 2px;
+        }
+
+        & input[type="text"] {
+            background: $white;
+            border-radius: 10px;
+            padding: 8px 13px;
+            width: 100%;
+
+            &::placeholder {
+                color: rgba(0, 0, 0, 0.5);
+                font-weight: 200;
+                font-size: 14px;
+            }
+
+            outline: none;
+            border: none;
+        }
+
+        & p {
+            padding-left: 8px;
+            padding-bottom: 8px;
+        }
+
+        & .line {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 600;
+            font-size: 16px;
+
+            & div {
+                width: 45%;
+            }
+        }
+
+        & .second,
+        .birth {
+            margin-top: 26px;
+        }
+
+        & .third {
+            width: 100%;
+            background: $white;
+            border-radius: 10px;
+
+            & .select {
+                width: 33% !important;
+                margin: 4px;
+                display: flex;
+                align-items: center;
+                height: 32px;
+                border-right: 1px solid #05e740;
+
+                & img {
+                    margin-right: 7px;
+                }
+            }
+
+            & select {
+                width: 100%;
+                appearance: none;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                padding: 4px 8px;
+                font-weight: 400;
+                font-size: 14px;
+            }
+        }
+
+        & .forth {
+            display: flex;
+            flex-direction: column;
+            margin-top: 26px;
+
+            & .employee {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                background: $white;
+                border-radius: 10px;
+                height: 40px;
+
+                & select {
+                    width: 100%;
+                    appearance: none;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    padding: 4px 8px;
+                    font-weight: 400;
+                    font-size: 14px;
+                }
+
+                & img {
+                    margin-right: 8px;
+                }
+            }
+        }
+    }
+}
+
+.get-credit {
+    color: $white;
+    font-weight: 700;
+    font-size: 16px;
+    background-color: $get-credit;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 18px;
+    margin-bottom: 36px;
+    padding: 8px 15px;
+
+    &:hover {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), $get-credit;
+        color: $white;
+    }
+}
+
+.range {
+    & .sum-of-credit {
+        margin-top: 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        & p {
+            font-weight: 600;
+            font-size: 16px;
+            margin: 0;
+        }
+
+        & .sum {
+            display: flex;
+            justify-content: space-between;
+            width: 190px;
+            color: $table-color;
+            margin-right: 5px;
+            background-color: $white;
+
+            & .sum-value {
+                font-size: 20px;
+                background-color: $white;
+                padding-left: 16px;
+                width: 75%;
+                border: none;
+
+                &:hover,
+                &:active,
+                &:focus-visible {
+                    outline: none;
+                }
+            }
+
+            & .currency {
+                font-size: 20px;
+                padding: 8px;
+            }
+        }
+    }
+
+    & .scroll {
+        margin-top: 10px;
+        width: 100%;
+
+        & input[type="range"] {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 24px;
+            border-radius: 15px;
+            background: $scroll-color-not;
+
+            &::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                width: 32px;
+                height: 30.94px;
+                background: url("/images/CreditsPage/scroll item.png");
+            }
+        }
+    }
+
+    & .min-and-max {
+        display: grid;
+        grid-auto-flow: column;
+
+        & p:nth-child(2) {
+            text-align: right;
+            margin-right: 8px;
+        }
+    }
+}
+
+.contain-credit {
+    margin-top: 96px;
+
+    & h2 {
+        font-weight: 700;
+        font-size: 48px;
+        color: $content-header;
+        margin-bottom: 96px;
+    }
+
+    &-main {
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4), inset 0px 4px 4px rgba(0, 0, 0, 0.4);
+        border-radius: 20px;
+
+        &-content {
+            margin-bottom: 48px;
+        }
+    }
+
+    &-scrolls {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    & .range {
+        width: 40%;
+        margin-top: 20px;
+    }
+
+    & .every-month {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 18px;
+        font-weight: 600;
+        color: $login-text;
+
+        & p {
+            font-size: 18px;
+            margin-left: 14px;
+        }
+
+        & .month-payment {
+            font-size: 24px;
+        }
+    }
+
+    & .my-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 0.5px solid $content-header;
+        font-weight: 600;
+        color: #0c0c0c;
+
+        &-name {
+            font-size: 18px;
+            padding: 32px 8px;
+        }
+
+        &-value {
+            font-size: 28px;
+            text-align: left;
+            width: 30%;
+            padding: 26px 8px;
+        }
+
+        margin-top: 10px;
+    }
+}
+
+.terms-credit {
+    text-align: center;
+    margin-bottom: 64px;
+
+    & h2 {
+        margin-top: 96px;
+        margin-bottom: 64px;
+    }
+
+    &-cards {
+        display: flex;
+        justify-content: space-between;
+
+        & .my-card {
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4), inset 0px 4px 4px rgba(0, 0, 0, 0.4);
+            margin-top: 48px;
+            width: 25%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 300px;
+
+            & p {
+                font-weight: 500;
+                font-size: 18px;
+                padding-top: 24px;
+            }
+
+            margin-bottom: 18px;
+        }
+    }
+}
+
+@media (min-width: 0) {
+    .right-side {
+        margin-top: 8px !important;
+    }
+
+    .left-side {
+        margin-bottom: 8px !important;
+    }
+
+    .contain-credit-scrolls {
+        flex-direction: column;
+
+        & .range {
+            width: 100%;
+        }
+    }
+
+    .contain-credit-main-content {
+        & .my-row {
+            &-name {
+                width: 40%;
+                font-size: 14px;
+            }
+
+            &-value {
+                width: 50%;
+                font-size: 18px;
+            }
+        }
+    }
+
+    .range {
+        & .min-and-max {
+            & p {
+                &:nth-child(1) {
+                    text-align: left;
+                    margin-left: 8px;
+                }
+            }
+        }
+
+        & .sum-of-credit {
+            flex-direction: column;
+
+            & .sum {
+                margin-top: 12px;
+                width: 170px;
+            }
+        }
+    }
+
+    .terms-credit-cards {
+        flex-direction: column;
+        align-items: center;
+
+        & .my-card {
+            width: 60%;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .right-side {
+        margin-top: 8px !important;
+    }
+
+    .left-side {
+        margin-bottom: 8px !important;
+    }
+
+    .contain-credit-scrolls {
+        flex-direction: column;
+
+        & .range {
+            width: 100%;
+        }
+    }
+
+    .contain-credit-main-content {
+        & .my-row {
+            &-name {
+                width: 50%;
+                font-size: 18px;
+            }
+
+            &-value {
+                width: 33%;
+                font-size: 24px;
+            }
+        }
+    }
+
+    .range {
+        & .min-and-max {
+            & p {
+                &:nth-child(1) {
+                    text-align: left;
+                    margin-left: 8px;
+                }
+            }
+        }
+
+        & .sum-of-credit {
+            flex-direction: row;
+
+            & .sum {
+                margin-top: 0;
+                width: 170px;
+            }
+        }
+    }
+
+    .terms-credit-cards {
+        flex-direction: column;
+        align-items: center;
+
+        & .my-card {
+            width: 60%;
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    form {
+        display: flex;
+    }
+
+    .right-side {
+        margin-top: 96px !important;
+    }
+
+    .left-side {
+        margin-bottom: 96px !important;
+    }
+
+    .contain-credit-scrolls {
+        flex-direction: row;
+
+        & .range {
+            width: 40%;
+        }
+    }
+
+    .contain-credit-main-content {
+        & .my-row {
+            &-name {
+                width: 50%;
+                font-size: 18px;
+            }
+
+            &-value {
+                width: 33%;
+                font-size: 24px;
+            }
+        }
+    }
+
+    .range {
+        & .min-and-max {
+            & p {
+                &:nth-child(1) {
+                    text-align: left;
+                    margin-left: 8px;
+                }
+            }
+        }
+
+        & .sum-of-credit {
+            flex-direction: row;
+
+            & .sum {
+                margin-top: 0;
+                width: 170px;
+            }
+        }
+    }
+
+    .terms-credit-cards {
+        flex-direction: row;
+        align-items: center;
+
+        & .my-card {
+            width: 30%;
+        }
+    }
+}

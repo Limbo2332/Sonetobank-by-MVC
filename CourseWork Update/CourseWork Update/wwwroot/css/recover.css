@@ -1,0 +1,103 @@
+﻿body {
+  background-image: url(/images/Login_Register/bg.jpg);
+}
+
+.recover-container {
+  display: flex;
+  position: absolute;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.recover-container .login {
+  background: #ebeaea;
+  border: 1px solid #000000;
+  font-family: "Nunito";
+  font-style: normal;
+  letter-spacing: 0.02em;
+  margin: auto;
+}
+.recover-container .login .wrapper {
+  padding: 20px;
+}
+.recover-container .login .wrapper .text {
+  text-align: center;
+  font-weight: 500;
+  font-size: 16px;
+  margin: 0 20px;
+}
+.recover-container .login .wrapper .input {
+  display: block;
+  margin: 20px auto 10px;
+  padding: 12px 14px;
+  width: 100%;
+  background-color: #fff;
+  border: none;
+  border-radius: 10px;
+}
+.recover-container .login .wrapper .input::placeholder {
+  color: rsgba(0, 0, 0, 0.5);
+  padding-left: 5px;
+  font-size: 14px;
+}
+.recover-container .login .wrapper .input:focus-visible {
+  outline: 1px solid greenyellow;
+}
+.recover-container .login .wrapper input[type=submit] {
+  display: block;
+  margin: 15px auto;
+  font-weight: 700;
+  font-size: 16px;
+  color: #fff;
+  background: rgba(255, 107, 0, 0.88);
+  border-radius: 104px;
+  padding: 10px 40px;
+}
+.recover-container .login .wrapper input[type=submit]:hover, .recover-container .login .wrapper input[type=submit]:active {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), rgba(255, 107, 0, 0.88);
+}
+.recover-container .login .wrapper .back {
+  display: block;
+  margin: 30px auto 10px;
+  text-align: center;
+  text-underline-offset: 3px;
+  color: #232323;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 1px;
+}
+.recover-container .login-from {
+  padding-top: 20px;
+  margin-bottom: 20px;
+  color: #232323;
+  text-align: center;
+  font-weight: 700;
+  font-size: 24px;
+}
+.recover-container .login .close {
+  position: relative;
+}
+.recover-container .login .close img {
+  position: absolute;
+  top: 29px;
+  right: 15px;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .login {
+    width: 60%;
+  }
+}
+@media (min-width: 992px) {
+  .login {
+    width: 40%;
+  }
+}
+@media (min-width: 1200px) {
+  .login {
+    width: 33%;
+  }
+}
